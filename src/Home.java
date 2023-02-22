@@ -1,107 +1,55 @@
+import java.time.LocalDate;
+
 /**
  * @Author Julia Parewick
- * @Date 2023-02-16
+ * @Date 2023-02-22
  * Descriptive class for a Home object
  */
 public class Home {
     /**
+     *Types of heating in a home
+     *
+     */
+    private enum HeatingType {
+        ELECTRIC,OIL,WOOD,GAS,OTHER
+    }
+
+    /**
+     *Location categories
+     */
+    private enum Location {
+        URBAN,RURAL
+    }
+
+    /**
      * Age of dwelling
      */
-    private Integer age;
+    private LocalDate yearBuilt;
     /**
-     * Enum object representing the type of dwelling
-     */
-    private DwellingType dwellingType;
-    /**
-     * Enum Object representing the type of heating in a dwelling
+     * int representing the type of heating in a dwelling.
      */
     private HeatingType heatingType;
     /**
      * Location of the dwelling
      */
-    private String location;
+    private Location location;
     /**
      * The monetary value of dwelling
      */
-    private double value;
+    private int value;
 
     /**
-     * getter
-     * @return Integer
-     */
-    public Integer getAge() {
-        return age;
-    }
-
-    /**
-     * setter
-     * @param age
-     */
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    /**
-     * getter
-     * @return String
-     */
-    public DwellingType getDwellingType() {
-        return dwellingType;
-    }
-
-    /**
-     * setter
-     * @param dwellingType
-     */
-    public void setDwellingType(DwellingType dwellingType) {
-        this.dwellingType = dwellingType;
-    }
-
-    /**
-     * getter
-     * @return HeatingType
-     */
-    public HeatingType getHeatingType() {
-        return heatingType;
-    }
-
-    /**
-     * setter
+     * Constructor
+     * @param yearBuilt
+     * @param value
      * @param heatingType
-     */
-    public void setHeatingType(HeatingType heatingType) {
-        this.heatingType = heatingType;
-    }
-
-    /**
-     * getter
-     * @return String
-     */
-    public String getLocation() {
-        return location;
-    }
-
-    /**
-     * setter
      * @param location
      */
-    public void setLocation(String location) {
-        this.location = location;
+    public Home(LocalDate yearBuilt, int value, HeatingType heatingType, Location location){
+        this.yearBuilt=yearBuilt;
+        this.value=value;
+        this.heatingType=heatingType;
+        this.location=location;
     }
 
-    /**
-     * getter
-     * @return double
-     */
-    public double getValue() {
-        return value;
-    }
-
-    /**
-     * setter
-     * @param value
-     */
-    public void setValue(double value) {
-        this.value = value;
-    }
 }
