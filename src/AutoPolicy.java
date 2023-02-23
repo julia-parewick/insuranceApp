@@ -3,7 +3,7 @@ import java.time.LocalDate;
 /**
  * @Author Daniel Condon
  * @Date 2023-02-22
- * Descriptive class for a customer's auto insurance policy
+ * Descriptive class for customer's auto insurance policy
  */
 public class AutoPolicy extends Policy {
     /**
