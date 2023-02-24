@@ -9,12 +9,12 @@ public class AutoPolicy extends Policy {
     /**
      * Insured driver
      */
-    private Driver insuredDriver;
+    private Driver driver;
 
     /**
      * Insured vehicle
      */
-    private Vehicle insuredVehicle;
+    private Vehicle vehicle;
 
     /**
      * Constructor for AutoPolicy class
@@ -24,26 +24,26 @@ public class AutoPolicy extends Policy {
      * @param insuredDriver The driver insured by the policy
      * @param insuredVehicle The vehicle insured by the policy
      */
-    public AutoPolicy(Customer customer, LocalDate startDate, LocalDate endDate, Driver insuredDriver, Vehicle insuredVehicle) {
+    public AutoPolicy(Customer customer, LocalDate startDate, LocalDate endDate, Driver driver, Vehicle vehicle) {
         super(customer, startDate, endDate);
-        this.insuredDriver = insuredDriver;
-        this.insuredVehicle = insuredVehicle;
+        this.driver = driver;
+        this.vehicle = vehicle;
     }
 
     /**
      * Getter for insuredDriver
      * @return The driver insured by the policy
      */
-    public Driver getInsuredDriver() {
-        return insuredDriver;
+    public Driver getDriver() {
+        return driver;
     }
 
     /**
      * Getter for insuredVehicle
      * @return The vehicle insured by the policy
      */
-    public Vehicle getInsuredVehicle() {
-        return insuredVehicle;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
     /**
@@ -51,23 +51,8 @@ public class AutoPolicy extends Policy {
      * @return premium
      */
     public double calculatePremium() {
-        double basePremium = 750.00;
-        int age = insuredDriver.getAge();
-        int accidents = insuredDriver.getNumberAccidents();
-        int vehicleAge = LocalDate.now().getYear() - insuredVehicle.getYear();
+        AutoQuote quote = new AutoQuote(super.startDate, super.endDate, Quote.getPremiumBeforeTax(), driver, vehicle);
 
-        double ageFactor = age < 25 ? 2.0 : 1.0;
-        double accidentFactor = accidents >= 2 ? 2.5 : accidents == 1 ? 1.25 : 1.0;
-        double vehicleAgeFactor;
-        if (vehicleAge < 5) {
-            vehicleAgeFactor = 1.0;
-        } else if (vehicleAge >= 5 && vehicleAge < 10) {
-            vehicleAgeFactor = 1.5;
-        } else {
-            vehicleAgeFactor = 2.5;
-        }
-
-        double totalFactor = ageFactor * accidentFactor * vehicleAgeFactor;
-        return basePremium * totalFactor;
+        return quote.calculateAutoQuote() * 1.15;
     }
 }
