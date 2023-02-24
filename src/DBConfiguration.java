@@ -16,7 +16,8 @@ public class DBConfiguration
     protected static final String DB_AUTH = "root";
     protected static final String DB_INSURANCE_DRIVER_TABLE_NAME = "driver";
     protected static final String DB_INSURANCE = "/taylorsInsurance";
-    protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_NAME = "driverName";
+    protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_FIRST_NAME = "firstName";
+    protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_LAST_NAME = "lastName";
     protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_AGE = "age";
     protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_ACCIDENTS = "numberOfAccidents";
     protected static final String DB_INSURANCE_DRIVER_TABLE_DRIVER_ADDRESS = "address";
