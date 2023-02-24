@@ -12,11 +12,11 @@ abstract class Policy {
     /**
      * start date of policy
      */
-    private LocalDate startDate;
+    protected LocalDate startDate;
     /**
      * end date of policy
      */
-    private LocalDate endDate;
+    protected LocalDate endDate;
 
     public Customer getCustomer() {
         return customer;
