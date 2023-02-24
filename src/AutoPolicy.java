@@ -21,8 +21,8 @@ public class AutoPolicy extends Policy {
      * @param customer The customer who holds the policy
      * @param startDate The start date of the policy
      * @param endDate The end date of the policy
-     * @param insuredDriver The driver insured by the policy
-     * @param insuredVehicle The vehicle insured by the policy
+     * @param driver The driver insured by the policy
+     * @param vehicle The vehicle insured by the policy
      */
     public AutoPolicy(Customer customer, LocalDate startDate, LocalDate endDate, Driver driver, Vehicle vehicle) {
         super(customer, startDate, endDate);
