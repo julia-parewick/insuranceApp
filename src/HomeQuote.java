@@ -8,18 +8,17 @@ import java.time.LocalDate;
 public class HomeQuote extends Quote
 {
     private static Home home;
-    private static final Double premiumBeforeTax = getPremiumBeforeTax();
+//    private static final Double premiumBeforeTax = getPremiumBeforeTax();
 
     /**
      * Instantiates a new HomeQuote
      * @param startDate        the start date
      * @param endDate          the end date
-     * @param premiumBeforeTax the premium before tax
      * @param selectedHome     the home
      */
-    public HomeQuote(LocalDate startDate, LocalDate endDate, Double premiumBeforeTax, Home selectedHome)
+    public HomeQuote(LocalDate startDate, LocalDate endDate, Home selectedHome)
     {
-        super(startDate, endDate, premiumBeforeTax);
+        super(startDate, endDate);
         home = selectedHome;
     }
 
@@ -50,8 +49,7 @@ public class HomeQuote extends Quote
      */
     public double calculateHomeQuote()
     {
-        Home home = getHome();
-        double premium = premiumBeforeTax;
+        double premium = 500;
         int value = home.getValue();
         int age = home.calculateAge();
         int heatingType;
@@ -73,5 +71,13 @@ public class HomeQuote extends Quote
         double totalFactor =  valueFactor * ageFactor * heatFactor * locationFactor;
 
         return premium * totalFactor;
+    }
+
+    public static void main(String[] args) {
+        HomeQuote h = new HomeQuote(
+                LocalDate.of(2023,01,30),
+                LocalDate.of(2024,01,30),
+                new Home(2013,220000,Home.HeatingType.ELECTRIC,Home.Location.URBAN));
+        System.out.println(h.calculateHomeQuote());
     }
 }

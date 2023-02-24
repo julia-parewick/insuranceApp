@@ -17,7 +17,7 @@ public class Home {
     /**
      *Location categories
      */
-    private enum Location {
+    enum Location {
         URBAN,RURAL
     }
 
