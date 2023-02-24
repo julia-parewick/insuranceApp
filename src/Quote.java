@@ -8,22 +8,22 @@ import java.time.LocalDate;
  */
 public class Quote
 {
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private BigDecimal premiumBeforeTax;
+    protected LocalDate startDate;
+    protected LocalDate endDate;
+    protected static Double premiumBeforeTax;
 
     /**
      * Instantiates a new Quote.
      *
-     * @param startDate        the start date
-     * @param endDate          the end date
-     * @param premiumBeforeTax the premium before tax
+     * @param startDate                 the start date
+     * @param endDate                   the end date
+     * @param insurancePremiumBeforeTax the premium before tax
      */
-    public Quote(LocalDate startDate, LocalDate endDate, BigDecimal premiumBeforeTax)
+    public Quote(LocalDate startDate, LocalDate endDate, Double insurancePremiumBeforeTax)
     {
         this.startDate = startDate;
         this.endDate = endDate;
-        this.premiumBeforeTax = premiumBeforeTax;
+        premiumBeforeTax = insurancePremiumBeforeTax;
     }
 
     /**
@@ -71,7 +71,7 @@ public class Quote
      *
      * @return the premium before tax
      */
-    public BigDecimal getPremiumBeforeTax()
+    public static Double getPremiumBeforeTax()
     {
         return premiumBeforeTax;
     }
@@ -79,10 +79,10 @@ public class Quote
     /**
      * Sets premium before tax.
      *
-     * @param premiumBeforeTax the premium before tax
+     * @param newPremiumBeforeTax the premium before tax
      */
-    public void setPremiumBeforeTax(BigDecimal premiumBeforeTax)
+    public void setPremiumBeforeTax(Double newPremiumBeforeTax)
     {
-        this.premiumBeforeTax = premiumBeforeTax;
+        premiumBeforeTax = newPremiumBeforeTax;
     }
 }
