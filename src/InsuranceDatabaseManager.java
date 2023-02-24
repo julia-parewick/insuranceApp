@@ -46,18 +46,18 @@ public class InsuranceDatabaseManager
 //        }
 //    }
 
-    protected static void addUser(Connection connection, Library library, String driverName, int age,
+    protected static void addUser(Connection connection, Library library, String firstName, String lastName, int age,
                                   int numberOfAccidents, String address) throws SQLException
     {
         // Create the new driver object
-        Driver newDriver = new Driver(driverName, age, numberOfAccidents, address);
+        Driver newDriver = new Driver(firstName, lastName, age, numberOfAccidents, address);
 
 
         // Insert driver data into database
         String sql = "INSERT INTO "
                 + DBConfiguration.DB_INSURANCE_DRIVER_TABLE_NAME
-                + "(driverName, age, numberOfAccidents, address) "
-                + "VALUES (?, ?, ?, ?)";
+                + "(firstName, lastName, age, numberOfAccidents, address) "
+                + "VALUES (?, ?, ?, ?, ?)";
 
         // Create prepared statement for database manipulation and set values
         PreparedStatement statement = connection.prepareStatement(sql);

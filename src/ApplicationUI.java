@@ -13,8 +13,10 @@ public class ApplicationUI
         switch (choice)
         {
             case 1:
-                System.out.print("Enter Name: ");
-                String name = String.valueOf(new Scanner(System.in).nextLine());
+                System.out.print("Enter First Name: ");
+                String firstName = String.valueOf(new Scanner(System.in).nextLine());
+                System.out.print("Enter Last Name: ");
+                String lastName = String.valueOf(new Scanner(System.in).nextLine());
                 System.out.print("Enter Age: ");
                 int age = Integer.parseInt(new Scanner(System.in).next());
                 System.out.print("Enter Number of Accidents: ");
@@ -22,7 +24,7 @@ public class ApplicationUI
                 System.out.print("Enter Address: ");
                 String address = String.valueOf(new Scanner(System.in).nextLine());
 
-                InsuranceDatabaseManager.addUser(DBConfiguration.establishDBConnection(), library, name, age, NOA, address);
+                InsuranceDatabaseManager.addUser(DBConfiguration.establishDBConnection(), library, firstName, lastName, age, NOA, address);
             case 2:
                 //editProfile();
             case 3:
