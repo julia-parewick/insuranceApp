@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @Author Dan Lewis
  * @Date 2023-02-24
@@ -5,54 +9,97 @@
  */
 public class Customer {
     /**
-     * Customer's Home Policy
+     * Customer's First Name
      */
-    private HomePolicy homePolicy;
+    private String firstName;
     /**
-     * Customer's Auto Policy
+     * Customer's Last Name
      */
-    private AutoPolicy autoPolicy;
+    private String lastName;
+    /**
+     * Customer's DOB as YYYY-MM-DD
+     */
+    private LocalDate dob;
+
+    /**
+     * Customer's Policies in a list
+     */
+    private List<Policy> policyList;
 
     /**
      * Instantiates a new Customer class
-     * @param homePolicy
-     * @param autoPolicy
+     * @param firstName
+     * @param lastName
+     * @param dob
      */
-    public Customer(HomePolicy homePolicy, AutoPolicy autoPolicy){
-        this.homePolicy = homePolicy;
-        this.autoPolicy = autoPolicy;
+    public Customer(String firstName, String lastName, LocalDate dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.policyList = new LinkedList<>();
     }
 
     /**
      * getter
-     * @return HomePolicy
+     * @return String
      */
-    public HomePolicy getHomePolicy() {
-        return homePolicy;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
      * setter
-     * @param homePolicy
+     * @param firstName
      */
-    public void setHomePolicy(HomePolicy homePolicy) {
-        this.homePolicy = homePolicy;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
      * getter
-     * @return AutoPolicy
+     * @return String
      */
-    public AutoPolicy getAutoPolicy() {
-        return autoPolicy;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
      * setter
-     * @param autoPolicy
+     * @param lastName
      */
-    public void setAutoPolicy(AutoPolicy autoPolicy) {
-        this.autoPolicy = autoPolicy;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
+    /**
+     * getter
+     * @return LocalDate
+     */
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    /**
+     * setter
+     * @param dob
+     */
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    /**
+     * getter
+     * @return List<Policy>
+     */
+    public List<Policy> getPolicyList() {
+        return policyList;
+    }
+
+    /**
+     * setter
+     * @param policyList
+     */
+    public void setPolicyList(List<Policy> policyList) {
+        this.policyList = policyList;
+    }
 }
