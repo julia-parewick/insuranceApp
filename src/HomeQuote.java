@@ -64,14 +64,10 @@ public class HomeQuote extends Quote
             case OTHER -> heatingType = 5;
             default -> heatingType = 0;
         }
-
-        double valueFactor = value > 250000 ? 0.2 : 0;
-        double ageFactor = age > 25 ? 1.25 : 0;
-        double heatFactor = heatingType==1 ? 1.00 : heatingType==2 ? 1.00 : heatingType==3 ? 2.00 :
-                heatingType==4 ? 1.25 : heatingType==5 ? 1.00 : null;
-        double valuefactor = value > 250000 ? 0.2 : 1.0;
+        double valueFactor = value > 250000 ? 0.2 : 1.0;
         double ageFactor = age > 25 ? 1.25 : 1.0;
-        double heatFactor = heatingType==1 ? 1.00 : heatingType==2 ? 1.00 : heatingType==3 ? 2.00 : heatingType==4 ? 1.25 : heatingType==5 ? 1.00 : 1.00;
+        double heatFactor = heatingType==1 ? 1.00 : heatingType==2 ? 1.00 : heatingType==3 ? 2.00 :
+                heatingType==4 ? 1.25 : 1.00;
         double locationFactor = home.isUrban() ? 1.00 : 1.25;
 
         double totalFactor =  valueFactor * ageFactor * heatFactor * locationFactor;
