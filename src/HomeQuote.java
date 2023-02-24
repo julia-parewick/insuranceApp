@@ -44,6 +44,11 @@ public class HomeQuote extends Quote
         this.home = home;
     }
 
+    /**
+     * calculates the quote for a home
+     *
+     * @return the home quote
+     */
     public double calculateHomeQuote()
     {
         Home home = getHome();
@@ -68,6 +73,7 @@ public class HomeQuote extends Quote
         double locationFactor = home.isUrban() ? 1.00 : 1.25;
 
         double totalFactor =  valueFactor * ageFactor * heatFactor * locationFactor;
+
         return premium * totalFactor;
     }
 }
