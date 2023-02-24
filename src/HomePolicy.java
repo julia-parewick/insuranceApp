@@ -34,27 +34,10 @@ public class HomePolicy extends Policy{
      * Calculates the home premium based on factors provided by Home object
      * @return double
      */
-    public double calculatePremium(){
-        double basePremium=500.00;
-        int value = home.getValue();
-        int age = home.calculateAge();
-        int heatingType;
-        Home.HeatingType type = home.getHeatingType();
-        switch(type){
-            case ELECTRIC -> heatingType = 1;
-            case GAS -> heatingType = 2;
-            case OIL -> heatingType = 3;
-            case WOOD -> heatingType = 4;
-            case OTHER -> heatingType = 5;
-            default -> heatingType = 6;
-        }
+    public double calculatePremium()
+    {
+        HomeQuote quote = new HomeQuote(super.startDate, super.endDate, Quote.getPremiumBeforeTax(), home);
 
-        double valuefactor = value > 250000 ? 0.2 : 0;
-        double ageFactor = age > 25 ? 1.25 : 0;
-        double heatFactor = heatingType==1 ? 1.00 : heatingType==2 ? 1.00 : heatingType==3 ? 2.00 : heatingType==4 ? 1.25 : heatingType==5 ? 1.00 : null;
-        double locationFactor = home.isUrban() ? 1.00 : 1.25;
-
-        double totalFactor =  valuefactor*ageFactor*heatFactor*locationFactor;
-        return basePremium*totalFactor;
+        return quote.calculateHomeQuote() * 1.15;
     }
 }

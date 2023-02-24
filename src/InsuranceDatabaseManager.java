@@ -8,6 +8,9 @@ import java.util.List;
  * The book database managing class.
  * <p>
  * Stores all queries for database manipulation.
+ *
+ * @Author Mason Seward
+ * @Date 2023-02-23
  */
 public class InsuranceDatabaseManager
 {
