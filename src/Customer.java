@@ -28,11 +28,12 @@ public class Customer {
 
     /**
      * Instantiates a new Customer class
+     *
      * @param firstName
      * @param lastName
      * @param dob
      */
-    public Customer(String firstName, String lastName, LocalDate dob){
+    public Customer(String firstName, String lastName, LocalDate dob) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
@@ -41,6 +42,7 @@ public class Customer {
 
     /**
      * getter
+     *
      * @return String
      */
     public String getFirstName() {
@@ -49,6 +51,7 @@ public class Customer {
 
     /**
      * setter
+     *
      * @param firstName
      */
     public void setFirstName(String firstName) {
@@ -57,6 +60,7 @@ public class Customer {
 
     /**
      * getter
+     *
      * @return String
      */
     public String getLastName() {
@@ -65,6 +69,7 @@ public class Customer {
 
     /**
      * setter
+     *
      * @param lastName
      */
     public void setLastName(String lastName) {
@@ -73,6 +78,7 @@ public class Customer {
 
     /**
      * getter
+     *
      * @return LocalDate
      */
     public LocalDate getDob() {
@@ -81,6 +87,7 @@ public class Customer {
 
     /**
      * setter
+     *
      * @param dob
      */
     public void setDob(LocalDate dob) {
@@ -89,6 +96,7 @@ public class Customer {
 
     /**
      * getter
+     *
      * @return List<Policy>
      */
     public List<Policy> getPolicyList() {
@@ -96,10 +104,11 @@ public class Customer {
     }
 
     /**
-     * setter
-     * @param policyList
+     * Adds a policy to the Customer's policy list
+     *
+     * @param policy
      */
-    public void setPolicyList(List<Policy> policyList) {
-        this.policyList = policyList;
+    public void addPolicy(Policy policy) {
+        this.policyList.add(policy);
     }
 }
