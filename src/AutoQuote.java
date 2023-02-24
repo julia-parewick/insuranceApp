@@ -17,7 +17,8 @@ public class AutoQuote extends Quote
      * @param startDate        the start date
      * @param endDate          the end date
      * @param premiumBeforeTax the premium before tax
-     * @param vehicle          the vehicle
+     * @param selectedDriver    the driver                         
+     * @param selectedVehicle   the vehicle
      */
     public AutoQuote(LocalDate startDate, LocalDate endDate, Double premiumBeforeTax, Driver selectedDriver, Vehicle selectedVehicle)
     {
