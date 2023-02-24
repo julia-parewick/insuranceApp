@@ -6,9 +6,15 @@
 public class Driver
 {
     /**
-     * Name of Driver
+     * First name of Driver
      */
-    private String driverName;
+    private String firstName;
+
+    /**
+     * Last name of Driver
+     */
+    private String lastName;
+
     /**
      * Age of Driver
      */
@@ -17,7 +23,6 @@ public class Driver
      * Number of Accidents Driver has been involved in
      */
     private int numberOfAccidents;
-
     /**
      * Driver's Home Address
      */
@@ -25,17 +30,47 @@ public class Driver
 
     /**
      * Instantiages a new Driver class
-     * @param name Driver's name
      * @param driverAge Driver's Age
      * @param numberOfAccidents Number of accidents by driver
      * @param address home address
      */
-    public Driver(String name, int driverAge, int numberOfAccidents, String address)
+    public Driver(String firstName, String lastName, int driverAge, int numberOfAccidents, String address)
     {
-        driverName = name;
-        age = driverAge;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = driverAge;
         this.numberOfAccidents = numberOfAccidents;
         this.address = address;
+    }
+    /**
+     * getter
+     * @return String
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * setter
+     * @param firstName
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    /**
+     * getter
+     * @return String
+     */
+    public String getLastName() {
+        return lastName;
+    }
+
+    /**
+     * setter
+     * @param lastName
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
