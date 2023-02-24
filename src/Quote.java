@@ -9,20 +9,17 @@ public class Quote
 {
     protected LocalDate startDate;
     protected LocalDate endDate;
-    protected static Double premiumBeforeTax;
 
     /**
      * Instantiates a new Quote.
      *
      * @param startDate                 the start date
      * @param endDate                   the end date
-     * @param insurancePremiumBeforeTax the premium before tax
      */
-    public Quote(LocalDate startDate, LocalDate endDate, Double insurancePremiumBeforeTax)
+    public Quote(LocalDate startDate, LocalDate endDate)
     {
         this.startDate = startDate;
         this.endDate = endDate;
-        premiumBeforeTax = insurancePremiumBeforeTax;
     }
 
     /**
@@ -63,25 +60,5 @@ public class Quote
     public void setEndDate(LocalDate endDate)
     {
         this.endDate = endDate;
-    }
-
-    /**
-     * Gets premium before tax.
-     *
-     * @return the premium before tax
-     */
-    public static Double getPremiumBeforeTax()
-    {
-        return premiumBeforeTax;
-    }
-
-    /**
-     * Sets premium before tax.
-     *
-     * @param newPremiumBeforeTax the premium before tax
-     */
-    public void setPremiumBeforeTax(Double newPremiumBeforeTax)
-    {
-        premiumBeforeTax = newPremiumBeforeTax;
     }
 }
