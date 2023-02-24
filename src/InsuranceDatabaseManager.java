@@ -64,10 +64,11 @@ public class InsuranceDatabaseManager
 
         // Create prepared statement for database manipulation and set values
         PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1, driverName);
-        statement.setInt(2, age);
-        statement.setInt(3, numberOfAccidents);
-        statement.setString(4, address);
+        statement.setString(1, firstName);
+        statement.setString(2, lastName);
+        statement.setInt(3, age);
+        statement.setInt(4, numberOfAccidents);
+        statement.setString(5, address);
         statement.execute();
         connection.close();
     }
