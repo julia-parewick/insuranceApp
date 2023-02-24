@@ -36,8 +36,16 @@ public class HomePolicy extends Policy{
      */
     public double calculatePremium()
     {
-        HomeQuote quote = new HomeQuote(super.startDate, super.endDate, Quote.getPremiumBeforeTax(), home);
+        HomeQuote quote = new HomeQuote(super.startDate, super.endDate, home);
 
         return quote.calculateHomeQuote() * 1.15;
+    }
+
+    public static void main(String[] args) {
+        HomePolicy h = new HomePolicy(new Customer("Test","testing",LocalDate.of(1992,01,01)),
+                LocalDate.of(2023,01,30),
+                LocalDate.of(2024,01,30),
+                new Home(2013,220000,Home.HeatingType.ELECTRIC,Home.Location.URBAN));
+        System.out.println(h.calculatePremium());
     }
 }
