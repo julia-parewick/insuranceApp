@@ -1,4 +1,3 @@
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -37,11 +36,11 @@ public class HomeQuote extends Quote
     /**
      * sets home
      *
-     * @param home the home
+     * @param newHome the new home
      */
-    public void setHome(Home home)
+    public void setHome(Home newHome)
     {
-        this.home = home;
+        home = newHome;
     }
 
     /**
