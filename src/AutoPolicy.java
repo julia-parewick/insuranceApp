@@ -51,7 +51,7 @@ public class AutoPolicy extends Policy {
      * @return premium
      */
     public double calculatePremium() {
-        AutoQuote quote = new AutoQuote(super.startDate, super.endDate, Quote.getPremiumBeforeTax(), driver, vehicle);
+        AutoQuote quote = new AutoQuote(super.startDate, super.endDate, driver, vehicle);
 
         return quote.calculateAutoQuote() * 1.15;
     }

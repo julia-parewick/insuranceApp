@@ -10,19 +10,17 @@ public class AutoQuote extends Quote
 {
     private static Vehicle vehicle;
     private static Driver driver;
-    private static final Double premiumBeforeTax = getPremiumBeforeTax();
 
     /**
      * Instantiates a new AutoQuote
      * @param startDate        the start date
      * @param endDate          the end date
-     * @param premiumBeforeTax the premium before tax
      * @param selectedDriver    the driver                         
      * @param selectedVehicle   the vehicle
      */
-    public AutoQuote(LocalDate startDate, LocalDate endDate, Double premiumBeforeTax, Driver selectedDriver, Vehicle selectedVehicle)
+    public AutoQuote(LocalDate startDate, LocalDate endDate, Driver selectedDriver, Vehicle selectedVehicle)
     {
-        super(startDate, endDate, premiumBeforeTax);
+        super(startDate, endDate);
         vehicle = selectedVehicle;
         driver = selectedDriver;
     }
@@ -69,7 +67,7 @@ public class AutoQuote extends Quote
 
     public double calculateAutoQuote()
     {
-        double premium = premiumBeforeTax;
+        double premium = 750;
         int age = driver.getAge();
         int accidents = driver.getNumberAccidents();
         int vehicleAge = LocalDate.now().getYear() - vehicle.getYear();
