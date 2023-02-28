@@ -5,40 +5,47 @@ import java.time.LocalDate;
  * @Date 2023-02-22
  * Descriptive class for an Accidents object
  */
-public class Accidents {
+public class Accidents
+{
     /**
      * The date of the accident
      */
-    private LocalDate date;
+    private final LocalDate date;
 
     /**
      * The driver at fault in the accident
      */
-    private Driver driverAtFault;
+    private final Driver driverAtFault;
 
     /**
      * Constructor for Accidents class
-     * @param date The date of the accident
+     *
+     * @param date          The date of the accident
      * @param driverAtFault The driver at fault in the accident
      */
-    public Accidents(LocalDate date, Driver driverAtFault) {
+    public Accidents(LocalDate date, Driver driverAtFault)
+    {
         this.date = date;
         this.driverAtFault = driverAtFault;
     }
 
     /**
      * Getter for date
+     *
      * @return The date of the accident
      */
-    public LocalDate getDate() {
+    public LocalDate getDate()
+    {
         return date;
     }
 
     /**
      * Getter for driverAtFault
+     *
      * @return The driver at fault in the accident
      */
-    public Driver getDriverAtFault() {
+    public Driver getDriverAtFault()
+    {
         return driverAtFault;
     }
 }

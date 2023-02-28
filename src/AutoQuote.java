@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 /**
  * The AutoQuote class contains data about auto quotes.
- * @Date 2023-02-24
+ *
  * @author Daniel Condon
+ * @Date 2023-02-24
  */
 
 public class AutoQuote extends Quote
@@ -13,10 +14,11 @@ public class AutoQuote extends Quote
 
     /**
      * Instantiates a new AutoQuote
-     * @param startDate        the start date
-     * @param endDate          the end date
-     * @param selectedDriver    the driver                         
-     * @param selectedVehicle   the vehicle
+     *
+     * @param startDate       the start date
+     * @param endDate         the end date
+     * @param selectedDriver  the driver
+     * @param selectedVehicle the vehicle
      */
     public AutoQuote(LocalDate startDate, LocalDate endDate, Driver selectedDriver, Vehicle selectedVehicle)
     {
@@ -42,18 +44,19 @@ public class AutoQuote extends Quote
      */
     public void setVehicle(Vehicle vehicle)
     {
-        this.vehicle = vehicle;
+        AutoQuote.vehicle = vehicle;
     }
 
     /**
      * Getter for insuredDriver
+     *
      * @return The driver insured by the policy
      */
     public Driver getDriver()
     {
         return driver;
     }
-    
+
     /**
      * sets driver
      *
@@ -61,25 +64,31 @@ public class AutoQuote extends Quote
      */
     public void setDriver(Driver driver)
     {
-        this.driver = driver;
+        AutoQuote.driver = driver;
     }
-    
+
 
     public double calculateAutoQuote()
     {
         double premium = 750;
         int age = driver.getAge();
         int accidents = driver.getNumberAccidents();
-        int vehicleAge = LocalDate.now().getYear() - vehicle.getYear();
+        int vehicleAge = LocalDate.now()
+                .getYear() - vehicle.getYear();
 
         double ageFactor = age < 25 ? 2.0 : 1.0;
         double accidentFactor = accidents >= 2 ? 2.5 : accidents == 1 ? 1.25 : 1.0;
         double vehicleAgeFactor;
-        if (vehicleAge < 5) {
+        if (vehicleAge < 5)
+        {
             vehicleAgeFactor = 1.0;
-        } else if (vehicleAge >= 5 && vehicleAge < 10) {
+        }
+        else if (vehicleAge >= 5 && vehicleAge < 10)
+        {
             vehicleAgeFactor = 1.5;
-        } else {
+        }
+        else
+        {
             vehicleAgeFactor = 2.5;
         }
 

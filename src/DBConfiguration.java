@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 /**
  * The DBConfiguration class stores all configuration variables for accessing and manipulating the database
+ *
  * @Author Mason Seward
  * @Date 2023-02-23
  */
@@ -61,7 +62,7 @@ public class DBConfiguration
         }
     }
 
-    public static Connection establishDBConnection ()
+    public static Connection establishDBConnection()
     {
         Connection connection = null;
         try
