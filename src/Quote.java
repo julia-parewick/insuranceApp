@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * @author Mason Seward
  * @Date 2023-02-24
  */
-public class Quote
+public abstract class Quote
 {
     protected LocalDate startDate;
     protected LocalDate endDate;
