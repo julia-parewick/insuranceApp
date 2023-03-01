@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 /**
  * The Quote class stores information on a quote.
- * @Date 2023-02-24
+ *
  * @author Mason Seward
+ * @Date 2023-02-24
  */
 public class Quote
 {
@@ -13,8 +14,8 @@ public class Quote
     /**
      * Instantiates a new Quote.
      *
-     * @param startDate                 the start date
-     * @param endDate                   the end date
+     * @param startDate the start date
+     * @param endDate   the end date
      */
     public Quote(LocalDate startDate, LocalDate endDate)
     {

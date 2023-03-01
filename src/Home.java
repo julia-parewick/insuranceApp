@@ -5,74 +5,80 @@ import java.time.LocalDate;
  * @Date 2023-02-22
  * Descriptive class for a Home object
  */
-public class Home {
-    /**
-     *Types of heating in a home
-     *
-     */
-    enum HeatingType {
-        ELECTRIC,OIL,WOOD,GAS,OTHER
-    }
-
-    /**
-     *Location categories
-     */
-    enum Location {
-        URBAN,RURAL
-    }
-
+public class Home
+{
     /**
      * Age of dwelling
      */
-    private int yearBuilt;
+    private final int yearBuilt;
     /**
      * int representing the type of heating in a dwelling.
      */
-    private HeatingType heatingType;
+    private final HeatingType heatingType;
     /**
      * Location of the dwelling
      */
-    private Location location;
+    private final Location location;
     /**
      * The monetary value of dwelling
      */
-    private int value;
-
+    private final int value;
     /**
      * Constructor
-     * @param yearBuilt
-     * @param value
-     * @param heatingType
-     * @param location
+     *
+     * @param yearBuilt     The year the house was built.
+     * @param value         The value.
+     * @param heatingType   The type of heat used.
+     * @param location      The location
      */
-    public Home(int yearBuilt, int value, HeatingType heatingType, Location location){
-        this.yearBuilt=yearBuilt;
-        this.value=value;
-        this.heatingType=heatingType;
-        this.location=location;
+    public Home(int yearBuilt, int value, HeatingType heatingType, Location location)
+    {
+        this.yearBuilt = yearBuilt;
+        this.value = value;
+        this.heatingType = heatingType;
+        this.location = location;
     }
 
-    public HeatingType getHeatingType() {
+    public HeatingType getHeatingType()
+    {
         return heatingType;
     }
 
-    public Location getLocation() {
+    public Location getLocation()
+    {
         return location;
     }
 
-    public int getValue() {
+    public int getValue()
+    {
         return value;
     }
 
-    public int calculateAge(){
-        return LocalDate.now().getYear()-this.yearBuilt;
+    public int calculateAge()
+    {
+        return LocalDate.now()
+                .getYear() - this.yearBuilt;
     }
 
-    public boolean isUrban(){
-        if(location==Location.URBAN){
-            return true;
-        }
-        return false;
+    public boolean isUrban()
+    {
+        return location == Location.URBAN;
+    }
+
+    /**
+     * Types of heating in a home
+     */
+    enum HeatingType
+    {
+        ELECTRIC, OIL, WOOD, GAS, OTHER
+    }
+
+    /**
+     * Location categories
+     */
+    enum Location
+    {
+        URBAN, RURAL
     }
 
 }

@@ -7,7 +7,8 @@ import java.util.List;
  * @Date 2023-02-24
  * Descriptive class for a Customer
  */
-public class Customer {
+public class Customer
+{
     /**
      * Customer's First Name
      */
@@ -24,16 +25,17 @@ public class Customer {
     /**
      * Customer's Policies in a list
      */
-    private List<Policy> policyList;
+    private final List<Policy> policyList;
 
     /**
      * Instantiates a new Customer class
      *
-     * @param firstName
-     * @param lastName
-     * @param dob
+     * @param firstName a customers first name.
+     * @param lastName  a customers last name.
+     * @param dob       a customers date of birth.
      */
-    public Customer(String firstName, String lastName, LocalDate dob) {
+    public Customer(String firstName, String lastName, LocalDate dob)
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
@@ -45,16 +47,18 @@ public class Customer {
      *
      * @return String
      */
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
     /**
      * setter
      *
-     * @param firstName
+     * @param firstName a customers first name.
      */
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
@@ -63,16 +67,18 @@ public class Customer {
      *
      * @return String
      */
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
     /**
      * setter
      *
-     * @param lastName
+     * @param lastName a customers last name.
      */
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
@@ -81,16 +87,18 @@ public class Customer {
      *
      * @return LocalDate
      */
-    public LocalDate getDob() {
+    public LocalDate getDob()
+    {
         return dob;
     }
 
     /**
      * setter
      *
-     * @param dob
+     * @param dob a customers date of birth.
      */
-    public void setDob(LocalDate dob) {
+    public void setDob(LocalDate dob)
+    {
         this.dob = dob;
     }
 
@@ -99,16 +107,18 @@ public class Customer {
      *
      * @return List<Policy>
      */
-    public List<Policy> getPolicyList() {
+    public List<Policy> getPolicyList()
+    {
         return policyList;
     }
 
     /**
      * Adds a policy to the Customer's policy list
      *
-     * @param policy
+     * @param policy the policy.
      */
-    public void addPolicy(Policy policy) {
+    public void addPolicy(Policy policy)
+    {
         this.policyList.add(policy);
     }
 }
