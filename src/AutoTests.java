@@ -44,7 +44,7 @@ public class AutoTests
                             Car Model: %s
                             Estimated start date: %s
                             Estimated end date: %s
-                            Policy quote: %.2f
+                            Policy quote: $%.2f
                                                     
                             """,
                     driver.getFirstName(), driver.getNumberAccidents(), civ.getModel(), startDate, endDate, aq.calculateAutoQuote());
