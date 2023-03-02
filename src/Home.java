@@ -23,13 +23,14 @@ public class Home
      * The monetary value of dwelling
      */
     private final int value;
+
     /**
      * Constructor
      *
-     * @param yearBuilt     The year the house was built.
-     * @param value         The value.
-     * @param heatingType   The type of heat used.
-     * @param location      The location
+     * @param yearBuilt   The year the house was built.
+     * @param value       The value.
+     * @param heatingType The type of heat used.
+     * @param location    The location
      */
     public Home(int yearBuilt, int value, HeatingType heatingType, Location location)
     {
