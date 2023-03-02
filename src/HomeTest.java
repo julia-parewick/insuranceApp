@@ -1,27 +1,59 @@
 import java.time.LocalDate;
-
+/**
+ * @Author Mason Seward
+ * @Date 2023-03-01
+ * Testing class for Home-related insurance calculations
+ */
 public class HomeTest {
-    static Customer customer = new Customer("Jon","Doe", LocalDate.of(1992,01,01));
-    static Home home = new Home(2013,220000,Home.HeatingType.ELECTRIC,Home.Location.URBAN);
+    /**
+     * A Customer class with params firstName,lastName,dob
+     */
+    static Customer customer = new Customer("Jon", "Doe", LocalDate.of(1992, 01, 01));
+    /**
+     * A Home class with param yearBuilt, value, HeatingType, Location
+     */
+    static Home[] homes = {
+            new Home(2013, 220000, Home.HeatingType.ELECTRIC, Home.Location.URBAN),
+            new Home(1995,300000,Home.HeatingType.OIL,Home.Location.RURAL),
+            new Home(2003, 260000,Home.HeatingType.GAS,Home.Location.RURAL)
+        };
+    /**
+     * Start date of a five year period
+     */
+    static LocalDate policy_start = LocalDate.of(2023,01,30);
+    /**
+     * End date of a five year period
+     */
+    static LocalDate policy_end = LocalDate.of(2028,01,30);
 
+    /**
+     * Method to output results of a home quote on an insurance policy.
+     */
     public static void homeQuoteTest(){
-        HomeQuote hquote = new HomeQuote(
-                LocalDate.of(2023,01,30),
-                LocalDate.of(2024,01,30),
-                home);
-        System.out.printf(
-                "Customer: %s %s\nAge:%d\nAge of home: %d\nHeating type: %s\nLocation: %s\nHome Insurance Quote: %.2f\n",customer.getFirstName(),customer.getLastName(),LocalDate.now().getYear()-customer.getDob().getYear(),home.calculateAge(),home.getHeatingType(),home.getLocation(),hquote.calculateHomeQuote()
-        );
+        for(Home home : homes){
+            HomeQuote hquote = new HomeQuote(
+                    policy_start,
+                    policy_end,
+                    home);
+            System.out.printf(
+                    "\nCustomer: %s %s\nAge of home: %d\nHeating type: %s\nLocation: %s\nHome Insurance Quote: %.2f\n",customer.getFirstName(),customer.getLastName(),home.calculateAge(),home.getHeatingType(),home.getLocation(),hquote.calculateHomeQuote()
+            );
+        }
     }
 
+    /**
+     * Method to output results (tax included) of a home policy.
+     */
     public static void homePolicyTest(){
-        HomePolicy hpolicy = new HomePolicy(
-                customer,
-                LocalDate.of(2023,01,30),
-                LocalDate.of(2024,01,30),
-                home
-        );
-        System.out.println("Home Policy Total: "+hpolicy.calculatePremium());
+        for(Home home: homes){
+            HomePolicy hpolicy = new HomePolicy(
+                    customer,
+                    policy_start,
+                    policy_end,
+                    home
+            );
+            System.out.printf("\nHome Policy Total: %.2f\n", hpolicy.calculatePremium());
+        }
     }
 
     public static void main(String[] args) {

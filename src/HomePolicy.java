@@ -26,15 +26,6 @@ public class HomePolicy extends Policy
         this.home = home;
     }
 
-    public static void main(String[] args)
-    {
-        HomePolicy h = new HomePolicy(new Customer("Test", "testing", LocalDate.of(1992, 1, 1)),
-                LocalDate.of(2023, 1, 30),
-                LocalDate.of(2024, 1, 30),
-                new Home(2013, 220000, Home.HeatingType.ELECTRIC, Home.Location.URBAN));
-        System.out.println("Your home policy costs: $" + h.calculatePremium());
-    }
-
     /**
      * getter
      *
