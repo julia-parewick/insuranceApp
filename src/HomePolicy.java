@@ -15,10 +15,10 @@ public class HomePolicy extends Policy
     /**
      * constructor
      *
-     * @param customer      The customer.
-     * @param startDate     The policy start date.
-     * @param endDate       The policy end date.
-     * @param home          The home.
+     * @param customer  The customer.
+     * @param startDate The policy start date.
+     * @param endDate   The policy end date.
+     * @param home      The home.
      */
     public HomePolicy(Customer customer, LocalDate startDate, LocalDate endDate, Home home)
     {
