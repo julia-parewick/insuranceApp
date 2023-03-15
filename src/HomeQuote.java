@@ -34,27 +34,17 @@ public class HomeQuote extends Quote
     }
 
     /**
-     * sets home
-     *
-     * @param newHome the new home
-     */
-    public void setHome(Home newHome)
-    {
-        home = newHome;
-    }
-
-    /**
      * calculates the quote for a home
      *
      * @return the home quote
      */
-    public double calculateHomeQuote()
+    double calculateHomeQuote()
     {
-        double premium = 500;
-        int value = home.getValue();
-        int age = home.calculateAge();
-        int heatingType;
-        Home.HeatingType type = home.getHeatingType();
+        final double premium = 500;
+        final int value = home.getValue();
+        final int age = home.calculateAge();
+        final int heatingType;
+        final Home.HeatingType type = home.getHeatingType();
         switch (type)
         {
             case ELECTRIC -> heatingType = 1;
@@ -64,13 +54,13 @@ public class HomeQuote extends Quote
             case OTHER -> heatingType = 5;
             default -> heatingType = 0;
         }
-        double valueFactor = value > 250000 ? value*0.002 : 0;
-        double ageFactor = age > 25 ? 1.25 : 1.0;
-        double heatFactor = heatingType == 1 ? 1.00 : heatingType == 2 ? 1.00 : heatingType == 3 ? 2.00 :
+        final double valueFactor = value > 250000 ? value*0.002 : 0;
+        final double ageFactor = age > 25 ? 1.25 : 1.0;
+        final double heatFactor = heatingType == 1 ? 1.00 : heatingType == 2 ? 1.00 : heatingType == 3 ? 2.00 :
                 heatingType == 4 ? 1.25 : 1.00;
-        double locationFactor = home.isUrban() ? 1.00 : 1.25;
+        final double locationFactor = home.isUrban() ? 1.00 : 1.25;
 
-        double totalFactor = ageFactor * heatFactor * locationFactor;
+        final double totalFactor = ageFactor * heatFactor * locationFactor;
 
         return ((premium + valueFactor) * totalFactor);
     }

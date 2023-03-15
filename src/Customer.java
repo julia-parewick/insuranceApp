@@ -53,16 +53,6 @@ public class Customer
     }
 
     /**
-     * setter
-     *
-     * @param firstName a customers first name.
-     */
-    public void setFirstName(String firstName)
-    {
-        this.firstName = firstName;
-    }
-
-    /**
      * getter
      *
      * @return String
@@ -73,16 +63,6 @@ public class Customer
     }
 
     /**
-     * setter
-     *
-     * @param lastName a customers last name.
-     */
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
-    }
-
-    /**
      * getter
      *
      * @return LocalDate
@@ -90,16 +70,6 @@ public class Customer
     public LocalDate getDob()
     {
         return dob;
-    }
-
-    /**
-     * setter
-     *
-     * @param dob a customers date of birth.
-     */
-    public void setDob(LocalDate dob)
-    {
-        this.dob = dob;
     }
 
     /**
