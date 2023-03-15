@@ -10,6 +10,10 @@ import java.util.List;
 public class Customer
 {
     /**
+     * Customer's Policies in a list
+     */
+    private final List<Policy> policyList;
+    /**
      * Customer's First Name
      */
     private String firstName;
@@ -21,11 +25,6 @@ public class Customer
      * Customer's DOB as YYYY-MM-DD
      */
     private LocalDate dob;
-
-    /**
-     * Customer's Policies in a list
-     */
-    private final List<Policy> policyList;
 
     /**
      * Instantiates a new Customer class

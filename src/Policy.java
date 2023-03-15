@@ -23,9 +23,9 @@ public abstract class Policy
     /**
      * constructor
      *
-     * @param customer      The policy's customer.
-     * @param startDate     The policy start date.
-     * @param endDate       The policy end date.
+     * @param customer  The policy's customer.
+     * @param startDate The policy start date.
+     * @param endDate   The policy end date.
      */
     public Policy(Customer customer, LocalDate startDate, LocalDate endDate)
     {
