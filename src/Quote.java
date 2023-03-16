@@ -34,16 +34,6 @@ public abstract class Quote
     }
 
     /**
-     * Sets quote start date.
-     *
-     * @param startDate the start date
-     */
-    public void setStartDate(LocalDate startDate)
-    {
-        this.startDate = startDate;
-    }
-
-    /**
      * Gets quote end date.
      *
      * @return the end date
@@ -53,13 +43,4 @@ public abstract class Quote
         return endDate;
     }
 
-    /**
-     * Sets quote end date.
-     *
-     * @param endDate the end date
-     */
-    public void setEndDate(LocalDate endDate)
-    {
-        this.endDate = endDate;
-    }
 }

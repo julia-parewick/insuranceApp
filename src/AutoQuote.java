@@ -38,16 +38,6 @@ public class AutoQuote extends Quote
     }
 
     /**
-     * sets vehicle
-     *
-     * @param vehicle - the vehicle
-     */
-    public void setVehicle(Vehicle vehicle)
-    {
-        AutoQuote.vehicle = vehicle;
-    }
-
-    /**
      * Getter for insuredDriver
      *
      * @return The driver insured by the policy
@@ -57,28 +47,17 @@ public class AutoQuote extends Quote
         return driver;
     }
 
-    /**
-     * sets driver
-     *
-     * @param driver - the driver
-     */
-    public void setDriver(Driver driver)
+    double calculateAutoQuote()
     {
-        AutoQuote.driver = driver;
-    }
-
-
-    public double calculateAutoQuote()
-    {
-        double premium = 750;
-        int age = driver.getAge();
-        int accidents = driver.getNumberAccidents();
-        int vehicleAge = LocalDate.now()
+        final double premium = 750;
+        final int age = driver.getAge();
+        final int accidents = driver.getNumberAccidents();
+        final int vehicleAge = LocalDate.now()
                 .getYear() - vehicle.getYear();
 
-        double ageFactor = age < 25 ? 2.0 : 1.0;
-        double accidentFactor = accidents >= 2 ? 2.5 : accidents == 1 ? 1.25 : 1.0;
-        double vehicleAgeFactor;
+        final double ageFactor = age < 25 ? 2.0 : 1.0;
+        final double accidentFactor = accidents >= 2 ? 2.5 : accidents == 1 ? 1.25 : 1.0;
+        final double vehicleAgeFactor;
         if (vehicleAge < 5)
         {
             vehicleAgeFactor = 1.0;
@@ -92,7 +71,7 @@ public class AutoQuote extends Quote
             vehicleAgeFactor = 2.5;
         }
 
-        double totalFactor = ageFactor * accidentFactor * vehicleAgeFactor;
+        final double totalFactor = ageFactor * accidentFactor * vehicleAgeFactor;
         return premium * totalFactor;
     }
 }

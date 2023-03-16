@@ -55,16 +55,6 @@ public class Driver
     }
 
     /**
-     * setter
-     *
-     * @param firstName a drivers first name.
-     */
-    public void setFirstName(String firstName)
-    {
-        this.firstName = firstName;
-    }
-
-    /**
      * getter
      *
      * @return String
@@ -72,16 +62,6 @@ public class Driver
     public String getLastName()
     {
         return lastName;
-    }
-
-    /**
-     * setter
-     *
-     * @param lastName a drivers last name.
-     */
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
     }
 
     /**
@@ -95,16 +75,6 @@ public class Driver
     }
 
     /**
-     * setter
-     *
-     * @param age drivers age
-     */
-    public void setAge(int age)
-    {
-        this.age = age;
-    }
-
-    /**
      * getter
      *
      * @return Integer
@@ -112,16 +82,6 @@ public class Driver
     public int getNumberAccidents()
     {
         return numberOfAccidents;
-    }
-
-    /**
-     * setter
-     *
-     * @param numberAccidents number of accidents by driver
-     */
-    public void setNumberAccidents(int numberAccidents)
-    {
-        numberOfAccidents = numberAccidents;
     }
 
     /**
@@ -134,13 +94,4 @@ public class Driver
         return address;
     }
 
-    /**
-     * setter
-     *
-     * @param address drivers address
-     */
-    public void setAddress(String address)
-    {
-        this.address = address;
-    }
 }
